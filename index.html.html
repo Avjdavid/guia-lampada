@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Guia Interativo: Trocar Lâmpada</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 min-h-screen flex items-center justify-center p-6">
+
+  <div class="max-w-2xl w-full space-y-4">
+    <h1 class="text-2xl font-bold text-center mb-6">Como Trocar uma Lâmpada</h1>
+
+    <!-- Passo 1 -->
+    <div class="bg-white rounded-2xl shadow p-4">
+      <button class="w-full flex justify-between items-center text-left font-semibold"
+              onclick="toggleStep('step1')">
+        <div class="flex items-center gap-2">
+          <!-- Ícone (caixa de ferramentas) -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-4h6v4m0-8V7a2 2 0 10-4 0v2m-2 0h8"/>
+          </svg>
+          1) Preparar materiais
+        </div>
+        <span id="icon-step1">+</span>
+      </button>
+      <div id="step1" class="hidden mt-2 text-gray-700 space-y-2">
+        <p>• Separe lâmpada nova compatível (E27/E14, etc).</p>
+        <p>• Use escadote estável e luvas.</p>
+        <p>• Desligue o interruptor ou disjuntor.</p>
+      </div>
+    </div>
+
+    <!-- Passo 2 -->
+    <div class="bg-white rounded-2xl shadow p-4">
+      <button class="w-full flex justify-between items-center text-left font-semibold"
+              onclick="toggleStep('step2')">
+        <div class="flex items-center gap-2">
+          <!-- Ícone (lâmpada apagada) -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M9 12a3 3 0 106 0 3 3 0 00-6 0zm0 0c0 1.657-1.343 3-3 3m9-3c0 1.657 1.343 3 3 3m-6 6v-3"/>
+          </svg>
+          2) Remover lâmpada antiga
+        </div>
+        <span id="icon-step2">+</span>
+      </button>
+      <div id="step2" class="hidden mt-2 text-gray-700 space-y-2">
+        <p>• Aguarde esfriar 2–5 min.</p>
+        <p>• Gire anti-horário (rosca comum E27/E14).</p>
+        <p>• Se for GU10, pressione e gire ¼ de volta.</p>
+      </div>
+    </div>
+
+    <!-- Passo 3 -->
+    <div class="bg-white rounded-2xl shadow p-4">
+      <button class="w-full flex justify-between items-center text-left font-semibold"
+              onclick="toggleStep('step3')">
+        <div class="flex items-center gap-2">
+          <!-- Ícone (nova lâmpada brilhando) -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M12 3v2m0 14v2m9-9h-2M5 12H3m14.95-6.364l-1.414 1.414M7.464 16.536l-1.414 1.414M16.536 16.536l1.414 1.414M7.464 7.464L6.05 6.05"/>
+          </svg>
+          3) Instalar nova lâmpada
+        </div>
+        <span id="icon-step3">+</span>
+      </button>
+      <div id="step3" class="hidden mt-2 text-gray-700 space-y-2">
+        <p>• Coloque a lâmpada nova no soquete.</p>
+        <p>• Gire horário até firme, sem apertar demais.</p>
+        <p>• Recoloque cúpula/vidro se houver.</p>
+      </div>
+    </div>
+
+    <!-- Passo 4 -->
+    <div class="bg-white rounded-2xl shadow p-4">
+      <button class="w-full flex justify-between items-center text-left font-semibold"
+              onclick="toggleStep('step4')">
+        <div class="flex items-center gap-2">
+          <!-- Ícone (interruptor ligado) -->
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-indigo-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+              d="M12 4v16m8-8H4"/>
+          </svg>
+          4) Testar iluminação
+        </div>
+        <span id="icon-step4">+</span>
+      </button>
+      <div id="step4" class="hidden mt-2 text-gray-700 space-y-2">
+        <p>• Ligue o disjuntor/interruptor.</p>
+        <p>• Confirme se a lâmpada acende corretamente.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function toggleStep(id) {
+      const el = document.getElementById(id);
+      const icon = document.getElementById("icon-" + id);
+      if (el.classList.contains("hidden")) {
+        el.classList.remove("hidden");
+        icon.textContent = "−";
+      } else {
+        el.classList.add("hidden");
+        icon.textContent = "+";
+      }
+    }
+  </script>
+
+</body>
+</html>
